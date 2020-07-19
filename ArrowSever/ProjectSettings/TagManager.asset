@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Sword_L
+  - Sword_R
+  - Bench5
+  - Red_L
+  - Bench3
+  - Bench8
+  - Blue_Up
+  - Blue_Down
+  - Blue_L
+  - Bench2
+  - Bench7
+  - Red_Down
+  - Bench4
+  - Bench6
+  - Red_Up
+  - Red_R
+  - Bench9
+  - Bench1
+  - Blue_R
+  - Sword
+  - Time
+  - Combo
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
