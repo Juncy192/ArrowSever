@@ -65,6 +65,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -142,6 +143,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -165,8 +167,7 @@ GameObject:
   - component: {fileID: 7837248170401126732}
   - component: {fileID: 7837248170401126731}
   - component: {fileID: 7837248170401126730}
-  - component: {fileID: 7837248170401126729}
-  - component: {fileID: 7837248170401126727}
+  - component: {fileID: 3376230203564947721}
   m_Layer: 0
   m_Name: Blue_Up
   m_TagString: Blue_Up
@@ -220,7 +221,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7837248170401126729
+--- !u!114 &3376230203564947721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,24 +230,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7837248170401126726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c2663748f45349c4b833c5341cd6e6c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fd5ff40d08f01d4a9dd07df63d97f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 100004, guid: a89abc0d2591545288f4c041059ae633, type: 3}
   UI_Director: {fileID: 0}
---- !u!114 &7837248170401126727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7837248170401126726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7bda5a779edff64285a3e9a7a2df611, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Ramdam: {fileID: 0}
+  gamecontroller: {fileID: 0}
   distance: 0
 --- !u!1 &7837248170441673255
 GameObject:
@@ -313,6 +302,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

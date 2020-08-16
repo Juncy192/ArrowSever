@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Touchswp : MonoBehaviour
 {
-    public Vector2 startPos;
 
+    // スワイプした時の距離の長さ
     public int Touchfeel = 100;
+    public Vector2 startPos;
 
     // IPhone7用のアスペクト比 1334×750
     public Vector2 SceneAspectRatio;
@@ -14,10 +15,6 @@ public class Touchswp : MonoBehaviour
     // Swordの親オブジェクトを取得する為の宣言
      GameObject Sword_L;
      GameObject Sword_R;
-
-    // Swordの子オブジェクトeffectを取得する為の宣言
-    Transform effect_L;
-    Transform effect_R;
 
     Animator anim;
 
@@ -28,10 +25,6 @@ public class Touchswp : MonoBehaviour
         // Swordのオブジェクトを取得
         this.Sword_L = GameObject.Find("Sword_L");
         this.Sword_R = GameObject.Find("Sword_R");
-
-        // Swordの子オブジェクトeffectを取得
-        this.effect_L = Sword_L.transform.Find("effect");
-        this.effect_R = Sword_R.transform.Find("effect2");
 
     }
 
@@ -68,7 +61,7 @@ public class Touchswp : MonoBehaviour
 
                         if (touch.deltaPosition.x > Touchfeel)
                         {
-                            this.effect_L.tag = "Blue_R";
+                            this.Sword_L.tag = "Blue_R";
 
                             anim.SetFloat("Speed", 5.0f);
                             anim.SetBool("L_Right_bool", true);
@@ -76,7 +69,7 @@ public class Touchswp : MonoBehaviour
                         }
                         else if (touch.deltaPosition.x < -Touchfeel)
                         {
-                            this.effect_L.tag = "Blue_L";
+                            this.Sword_L.tag = "Blue_L";
 
                             anim.SetFloat("Speed", 5.0f);
                             anim.SetBool("L_Left_bool", true);
@@ -84,7 +77,7 @@ public class Touchswp : MonoBehaviour
                         }
                         else if (touch.deltaPosition.y > Touchfeel)
                         {
-                            this.effect_L.tag = "Blue_Up";
+                            this.Sword_L.tag = "Blue_Up";
 
                             anim.SetFloat("Speed", 5.0f);
                             anim.SetBool("L_Up_bool", true);
@@ -92,7 +85,7 @@ public class Touchswp : MonoBehaviour
                         }
                         else if (touch.deltaPosition.y < -Touchfeel)
                         {
-                            this.effect_L.tag = "Blue_Down";
+                            this.Sword_L.tag = "Blue_Down";
 
                             anim.SetFloat("Speed", 5.0f);
                             anim.SetBool("L_Down_bool", true);
@@ -104,32 +97,33 @@ public class Touchswp : MonoBehaviour
                     {
                         if (touch.deltaPosition.x > Touchfeel)
                         {
-                            this.effect_R.tag = "Red_R";
+                            this.Sword_R.tag = "Red_R";
 
                             anim.SetFloat("Speed", 5.0f);
                             anim.SetBool("R_Right_bool", true);
                         }
                         else if (touch.deltaPosition.x < -Touchfeel)
                         {
-                            this.effect_R.tag = "Red_L";
+                            this.Sword_R.tag = "Red_L";
 
                             anim.SetFloat("Speed", 5.0f);
                             anim.SetBool("R_Left_bool", true);
                         }
                         else if (touch.deltaPosition.y > Touchfeel)
                         {
-                            this.effect_R.tag = "Red_Up";
+                            this.Sword_R.tag = "Red_Up";
 
                             anim.SetFloat("Speed", 5.0f);
                             anim.SetBool("R_Up_bool", true);
                         }
                         else if (touch.deltaPosition.y < -Touchfeel)
                         {
-                            this.effect_R.tag = "Red_Down";
+                            this.Sword_R.tag = "Red_Down";
 
                             anim.SetFloat("Speed", 5.0f);
                             anim.SetBool("R_Down_bool", true);
                         }
+
                     }
                     break;
 
@@ -141,73 +135,6 @@ public class Touchswp : MonoBehaviour
                     break;
             }
 
-        }
-        else if(Input.touchCount == 5)
-        {
-            Touch touch = Input.GetTouch(0);
-            this.SceneAspectRatio = new Vector2(1334, 750);
-
-            // タッチの状態の分岐 touch.phase
-            switch (touch.phase)
-            {
-
-                // 画面に指が振れた時
-                case TouchPhase.Began:
-                    startPos = touch.position;
-                    break;
-
-                // 画面上で指が動いた時
-                case TouchPhase.Moved:
-                    // 左画面
-                    if (startPos.x < SceneAspectRatio.x / 2)
-                    {
-                        if (touch.deltaPosition.x > 0)
-                        {
-                           anim.SetBool("L_Right_bool", true);
-                        }
-                        else if (touch.deltaPosition.x < 0)
-                        {
-                           anim.SetBool("L_Left_bool", true);
-                        }
-                        else if (touch.deltaPosition.y > 30)
-                        {
-                           anim.SetBool("L_Up_bool", true);
-                        }
-                        else if (touch.deltaPosition.y < -30)
-                        {
-                           anim.SetBool("L_Down_bool", true);
-                        }
-                    }
-
-                    // 右画面
-                    if (startPos.x > SceneAspectRatio.x / 2)
-                    {
-                        if (touch.deltaPosition.x > 0)
-                        {
-                           anim.SetBool("R_Right_bool", true);
-                        }
-                        else if (touch.deltaPosition.x < 0)
-                        {
-                           anim.SetBool("R_Left_bool", true);
-                        }
-                        else if (touch.deltaPosition.y > 30)
-                        {
-                           anim.SetBool("R_Up_bool", true);
-                        }
-                        else if (touch.deltaPosition.y < -30)
-                        {
-                           anim.SetBool("R_Down_bool", true);
-                        }
-                    }
-                    break;
-
-                // 画面から指が離れた時
-                case TouchPhase.Ended:
-                    break;
-                
-                default:
-                    break;
-            }
         }
     }
 }
